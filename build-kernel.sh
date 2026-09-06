@@ -52,7 +52,7 @@ make olddefconfig
 sed -i 's/CONFIG_LOCALVERSION="-ARCH"/CONFIG_LOCALVERSION=""/' .config
 cp .config /2-config.txt
 
-export KCFLAGS="-march=armv8-a+crypto+crc -mtune=cortex-a76.cortex-a55"
+export KCFLAGS="-march=armv8-a+crypto+crc -mtune=cortex-a55"
 fakeroot make -j$(nproc) LOCALVERSION="-rockchip"  deb-pkg
 cd ..
 cp *.deb /
