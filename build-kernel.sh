@@ -28,15 +28,9 @@ wget https://raw.githubusercontent.com/warpme/minimyth2/refs/heads/master/script
 
 cd ..
 
-git clone --depth 1 https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git -b linux-7.2.y
+git clone --depth 1 https://github.com/mj22226/linux.git -b linux-7.3
 
 cd linux
-# minimyth2 patch
-for i in ../minimyth2/*.patch
-do
-        echo $i
-        patch -p1 < $i
-done
 cp /my-add.txt .
 wget https://raw.githubusercontent.com/archlinuxarm/PKGBUILDs/refs/heads/master/core/linux-aarch64/config
 
