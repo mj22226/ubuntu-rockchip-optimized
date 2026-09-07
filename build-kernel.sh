@@ -32,11 +32,11 @@ git clone --depth 1 https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux
 
 cd linux
 # minimyth2 patch
-for i in ../minimyth2/*.patch
-do
-        echo $i
-        patch -p1 < $i
-done
+# for i in ../minimyth2/*.patch
+# do
+#        echo $i
+#        patch -p1 < $i
+# done
 cp /my-add.txt .
 wget https://raw.githubusercontent.com/archlinuxarm/PKGBUILDs/refs/heads/master/core/linux-aarch64/config
 
