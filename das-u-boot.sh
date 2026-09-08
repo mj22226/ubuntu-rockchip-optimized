@@ -7,8 +7,8 @@
 
 		git clone --depth 1 https://github.com/rockchip-linux/rkbin
 		
-		DDR=`ls rkbin/bin/rk35/rk3568_ddr_1560MHz_v*.bin`
-		BL31=`ls rkbin/bin/rk35/rk3568_bl31_v*.elf`
+		DDR=`ls rkbin/bin/rk33/rk3399_ddr_800MHz_v*.bin`
+		BL31=`ls rkbin/bin/rk33/rk3399_bl31_v*.elf`
 	export BL31=`pwd`/$BL31
 	export ROCKCHIP_TPL=`pwd`/$DDR
 echo ""
@@ -28,7 +28,7 @@ echo ""
 			exit 1
 		fi
 
-	echo 'CONFIG_SYS_SOC="rk3568"' >> configs/$1
+	echo 'CONFIG_SYS_SOC="rk3399"' >> configs/$1
 sed -i 's/#ifndef CONFIG_XPL_BUILD/#ifndef CONFIG_XPL_BUILD\n\n #define BOOT_TARGETS    "nvme scsi"\n\n/' include/configs/rockchip-common.h
 
 		make clean $1

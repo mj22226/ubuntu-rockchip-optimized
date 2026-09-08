@@ -66,10 +66,10 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           # 実行するたびにユニークなタグ名（例: build-1, build-2...）を付けます
-          tag_name: build-${{ github.run_number }}
-          name: "Radxa Rock 3A Disk Image Build ${{ github.run_number }}"
+          tag_name: rock-pi-4-${{ github.run_number }}
+          name: "Radxa Rock pi 4BDisk Image Build ${{ github.run_number }}"
           body: |
-            Radxa Rock 3A ディスクイメージ with Mesa for Rockchip
+            Radxa Rock pi 4B ディスクイメージ with Mesa for Rockchip
             ビルド日時: ${{ steps.date.outputs.now }}
             ベースカーネル: ${{ steps.kernel.outputs.kernel_version }}
             Mesa バージョン: ${{ steps.mesa.outputs.release_mesa_info }}
