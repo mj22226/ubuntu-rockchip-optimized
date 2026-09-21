@@ -28,7 +28,7 @@ wget https://raw.githubusercontent.com/warpme/minimyth2/refs/heads/master/script
 
 cd ..
 
-git clone --depth 1 https://github.com/mj22226/linux.git -b linux-7.3
+git clone --depth 1 https://github.com/mj22226/linux.git -b linux-6.18
 
 cd linux
 # minimyth2 patch
