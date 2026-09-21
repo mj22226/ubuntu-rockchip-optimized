@@ -67,7 +67,7 @@ jobs:
         with:
           # 実行するたびにユニークなタグ名（例: build-1, build-2...）を付けます
           tag_name: rock-pi-4-${{ github.run_number }}
-          name: "Radxa Rock pi 4BDisk Image Build ${{ github.run_number }}"
+          name: "Radxa Rock pi 4B Disk Image"
           body: |
             Radxa Rock pi 4B ディスクイメージ with Mesa for Rockchip
             ビルド日時: ${{ steps.date.outputs.now }}
