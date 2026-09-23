@@ -66,7 +66,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           # 実行するたびにユニークなタグ名（例: build-1, build-2...）を付けます
-          tag_name: build-${{ github.run_number }}
+          tag_name: build-r6c-${{ github.run_number }}
           name: "FriendlyElec NanoPi R6C Disk Image Build ${{ github.run_number }}"
           body: |
             FriendlyElec NanoPi R6C ディスクイメージ with Mesa for Rockchip
