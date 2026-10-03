@@ -20,7 +20,7 @@ echo ""
 echo "PATH=$PATH"
 echo ""
 
-		git clone --depth 1 https://gitlab.com/u-boot/u-boot.git -b v2025.07
+		git clone --depth 1 https://github.com/mj22226/u-boot.git -b m4
 		cd u-boot
 		if [ ! -f configs/$1 ]; then
 			echo "$1 not found in configs"
