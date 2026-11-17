@@ -68,9 +68,6 @@ python-is-python3 debhelper python3-pyelftools python3-setuptools \
 python3-pkg-resources swig libfdt-dev libpython3-dev \
 git fakeroot libssl-dev libelf-dev libgnutls28-dev 
 
-#systemd-nspawn -D $1 --resolv-conf=replace-host -E DEBIAN_FRONTEND=noninteractive --as-pid2 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-13 13
-#systemd-nspawn -D $1 --resolv-conf=replace-host -E DEBIAN_FRONTEND=noninteractive --as-pid2 sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-13 13
-
 systemd-nspawn -D $1 --resolv-conf=replace-host -E DEBIAN_FRONTEND=noninteractive --as-pid2 sudo apt-get -y install meson ninja-build pkgconf pkgconf-bin python3-mako \
   libdrm-dev libpciaccess-dev libffi-dev libsensors-dev libxml2-dev \
   libx11-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-glx0-dev \
