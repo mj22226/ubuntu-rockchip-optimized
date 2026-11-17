@@ -7,8 +7,8 @@
 
 		git clone --depth 1 https://github.com/rockchip-linux/rkbin
 		
-		DDR=`ls rkbin/bin/rk35/rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v*.bin`
-		BL31=`ls rkbin/bin/rk35/rk3588_bl31*.elf`
+		DDR=`ls rkbin/bin/rk33/rk3399_ddr_800MHz_v*.bin`
+		BL31=`ls rkbin/bin/rk33/rk3399_bl31_v*.elf`
 	export BL31=`pwd`/$BL31
 	export ROCKCHIP_TPL=`pwd`/$DDR
 echo ""
@@ -28,12 +28,13 @@ echo ""
 			exit 1
 		fi
 
-	echo 'CONFIG_SYS_SOC="rk3588"' >> configs/$1
-sed -i 's/#ifndef CONFIG_XPL_BUILD/#ifndef CONFIG_XPL_BUILD\n\n #define BOOT_TARGETS    "nvme scsi"\n\n/' include/configs/rockchip-common.h
+	echo 'CONFIG_SYS_SOC="rk3399"' >> configs/$1
+sed -i 's/#ifndef CONFIG_XPL_BUILD/#ifndef CONFIG_XPL_BUILD\n\n#define BOOT_TARGET_DEVICES_SCSI(func) func(SCSI, scsi, 0, 0, 0) func(SCSI, scsi, 0, 0, 1)\n\n#define BOOT_TARGET_DEVICES_NVME(func) func(NVME, nvme, 0, 0, 0) func(NVME, nvme, 0, 0, 1)\n\n/' include/configs/rockchip-common.h
 
 		make clean $1
 		make -j8
 		cp u-boot-rockchip.bin /
+		# cp u-boot-rockchip-spi.bin ../..
 	echo "dd if=u-boot-rockchip.bin of=/dev/sdX seek=1 bs=32k conv=fsync"
 	cd ../..
 exit 0
