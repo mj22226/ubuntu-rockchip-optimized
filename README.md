@@ -41,7 +41,7 @@ Orange Pi 5 および Orange Pi 5 Plus 向けに、極限まで軽量化・最�
 
 ### glmark2-es2-wayland スコア
 
-GNOME (Wayland) セッション、CPU Governor `performance` 設定時の実測値です（※4Kページ版・16Kページ版ともに **3600 超え** の高スコアを記録）。
+GNOME (Wayland) セッション、CPU Governor `performance` 設定時の実測値です（※4Kページ版・16Kページ版ともに **3400 超え** の高スコアを記録）。
 
 | ボード | Governor | スコア |
 |---|---|---|
