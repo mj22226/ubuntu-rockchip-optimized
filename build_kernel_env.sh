@@ -62,7 +62,7 @@ python-is-python3 fdisk bc debhelper python3-pyelftools python3-setuptools \
 python3-pkg-resources swig libfdt-dev libpython3-dev \
 git fakeroot build-essential ncurses-dev \
 libelf-dev libgnutls28-dev libdw-dev
-cp -r patch arm64
+#cp -r patch arm64
 echo "\n##################      systemd-nspawn  END     #######################\n"
 
 # u-boot
