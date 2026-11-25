@@ -121,7 +121,7 @@ systemd-nspawn -D $1 \
   --setenv=DEBCONF_NONINTERACTIVE_SEEN=true \
   /bin/bash -c "echo 'kdump-tools kdump-tools/use_kdump boolean false' | debconf-set-selections && \
   sudo apt-get -y install ubuntu-desktop-minimal gdm3 linux-firmware oem-config-gtk ubiquity-frontend-gtk ubiquity-slideshow-ubuntu yaru-theme-unity yaru-theme-icon yaru-theme-gtk aptdaemon initramfs-tools vim cloud-guest-utils e2fsprogs sudo"
-systemd-nspawn -D $1 --resolv-conf=replace-host --as-pid2 /bin/bash -c "sudo apt-get install -y gstreamer1.0-plugins-bad gstreamer1.0-plugins-good gstreamer1.0-tools clapper mpv vulkan-tools mesa-utils llvm-22"
+systemd-nspawn -D $1 --resolv-conf=replace-host --as-pid2 /bin/bash -c "sudo apt-get install -y gstreamer1.0-plugins-bad gstreamer1.0-plugins-good gstreamer1.0-tools clapper mpv vulkan-tools mesa-utils"
 
 systemd-nspawn -D $1 --resolv-conf=replace-host --as-pid2 sudo apt-get -y purge cloud-init flash-kernel fwupd nano grub-efi-arm64
 
@@ -145,7 +145,6 @@ systemd-nspawn -D $1 --resolv-conf=replace-host --as-pid2 sudo /bin/bash -c "cd 
 rm -rf $1/kkk
 kernel_version="`ls -1 $1/boot/vmlinu?-*|sed 's#-# #g' | awk '{ print $2 }'|head -1`"
 echo "kernel_version=$kernel_version" > overlay/kernel_version
-cat overlay/kernel_version
 # install U-Boot
 systemd-nspawn -D $1 --resolv-conf=replace-host --as-pid2 sudo apt-get -y install u-boot-tools u-boot-menu
 
